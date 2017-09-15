@@ -1,0 +1,1339 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-52 "http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#" >
+    <!ENTITY untitled-ontology-5 "http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/maraisch/ontologies/2015/10/untitled-ontology-5#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:untitled-ontology-52="http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5">
+        <description>Projet  onthologie de la music</description>
+        <creator>AISSA et ZAID</creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#creator -->
+
+    <owl:AnnotationProperty rdf:about="&untitled-ontology-52;creator">
+        <rdfs:subPropertyOf rdf:resource="&rdfs;label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#description -->
+
+    <owl:AnnotationProperty rdf:about="&untitled-ontology-52;description"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <rdf:Description rdf:about="&rdfs;label">
+        <rdfs:label></rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourArtiste -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;aPourArtiste">
+        <rdfs:label xml:lang="fr">a pour artiste</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourArtiste est la relation entre l&apos;artiste et la chanson. C&apos;est une relation mère pour les relations estComposePar, estCreePar et estInterpretePar.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourGenre -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;aPourGenre">
+        <rdfs:label xml:lang="fr">a pour genre</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourGenre est la relation entre le genre et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourGroupe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;aPourGroupe">
+        <rdfs:label xml:lang="fr">a pour groupe</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourGroupe est la relation entre le groupe et la chanson. C&apos;est une relation mère pour les relations aPourGroupeAuteur, aPourGroupeCompositeur et aPourGroupeInterprete.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Groupe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourMembre -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;aPourMembre">
+        <rdfs:label xml:lang="fr">a pour membre</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourMembre est une relation entre le groupe et l&apos;artiste.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Groupe"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estMembreDe"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourSousGenre -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;aPourSousGenre">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label xml:lang="fr">a pour sous-genre</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourSousGenre est une relation entre le genre et le sous-genre.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Genre"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estSousGenreDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#appartient -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;appartient">
+        <rdfs:label xml:lang="fr">appartient</rdfs:label>
+        <rdfs:comment xml:lang="fr">appartient est une relation entre l&apos;album et la chanson.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#compose -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;compose">
+        <rdfs:label xml:lang="fr">compose</rdfs:label>
+        <rdfs:comment xml:lang="fr">compose est la relation entre le compositeur et la chanson.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Compositeur"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estComposePar"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#contient -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;contient">
+        <rdfs:label xml:lang="fr">contient</rdfs:label>
+        <rdfs:comment xml:lang="fr">contient est une relation entre l&apos;album et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;appartient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#cree -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;cree">
+        <rdfs:label xml:lang="fr">crée</rdfs:label>
+        <rdfs:comment xml:lang="fr">cree est la relation entre l&apos;auteur et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Auteur"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estCreePar"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estArtisteDe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estArtisteDe">
+        <rdfs:label xml:lang="fr">est artiste de</rdfs:label>
+        <rdfs:comment xml:lang="fr">estArtisteDe est la relation l&apos;artiste et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estComposePar -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estComposePar">
+        <rdfs:label xml:lang="fr">est composé par</rdfs:label>
+        <rdfs:comment xml:lang="fr">estComposePar est la relation entre le compositeur et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Compositeur"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estCreePar -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estCreePar">
+        <rdfs:label xml:lang="fr">est créé par</rdfs:label>
+        <rdfs:comment xml:lang="fr">estCreePar est la relation entre l&apos;auteur et la chanson.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Auteur"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estGenreDe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estGenreDe">
+        <rdfs:label xml:lang="fr">est genre de</rdfs:label>
+        <rdfs:comment xml:lang="fr">estGenreDe est la relation entre la chanson et le genre.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Genre"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;aPourGenre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estGroupeDe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estGroupeDe">
+        <rdfs:label xml:lang="fr">est groupe de</rdfs:label>
+        <rdfs:comment xml:lang="fr">estGroupeDe est la relation entre le groupe et la chanson. C&apos;est une relation mère pour les relations estGroupeAuteurDe, estGroupeCompositeurDe et estGroupeInterpreteDe.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Groupe"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;aPourGroupe"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estInterpretePar -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estInterpretePar">
+        <rdfs:label xml:lang="fr">est interprété par</rdfs:label>
+        <rdfs:comment xml:lang="fr">estInterpretePar est la relation entre l&apos;interprète et la chanson.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Interprète"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estMembreDe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estMembreDe">
+        <rdfs:label xml:lang="fr">est membre de</rdfs:label>
+        <rdfs:comment xml:lang="fr">aPourMembreDe est la relation entre le groupe et l&apos;artiste.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Groupe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estRepresenteeDans -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estRepresenteeDans">
+        <rdfs:label xml:lang="fr">est représentée dans</rdfs:label>
+        <rdfs:comment xml:lang="fr">estRepresenteeDans est la relation entre la chanson et le fichier.</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Fichier"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#estSousGenreDe -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;estSousGenreDe">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label xml:lang="fr">est sous-genre de</rdfs:label>
+        <rdfs:comment xml:lang="fr">estSousGenreDe est la relation entre le genre et le sous-genre.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Genre"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#interprete -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;interprete">
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Interprète"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estInterpretePar"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#joue -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-52;joue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">joue</rdfs:label>
+        <rdfs:comment xml:lang="fr">joue est la relation entre le fichier et la chanson.</rdfs:comment>
+        <rdfs:range rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Fichier"/>
+        <owl:inverseOf rdf:resource="&untitled-ontology-52;estRepresenteeDans"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourAnneeApparitionAlbum -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourAnneeApparitionAlbum">
+        <rdfs:label xml:lang="fr">année album</rdfs:label>
+        <rdfs:comment xml:lang="fr">année d&apos;apparition d&apos;un album</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourAnneeApparitionChanson -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourAnneeApparitionChanson">
+        <rdfs:label xml:lang="fr">année chanson</rdfs:label>
+        <rdfs:comment xml:lang="fr">année d&apos;apparition d&apos;une chanson</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourDateDeNaissance -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourDateDeNaissance">
+        <rdfs:label xml:lang="fr">naissance</rdfs:label>
+        <rdfs:comment xml:lang="fr">date de naissance de l&apos;artiste</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourDuree -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourDuree">
+        <rdfs:label xml:lang="fr">durée</rdfs:label>
+        <rdfs:comment xml:lang="fr">durée d&apos;une chanson</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNationalite -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNationalite">
+        <rdfs:label xml:lang="fr">nationalité</rdfs:label>
+        <rdfs:comment xml:lang="fr">nationalité de l&apos;artiste</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNomAlbum -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNomAlbum">
+        <rdfs:label xml:lang="fr">nom album</rdfs:label>
+        <rdfs:comment xml:lang="fr">nom de l&apos;album</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNomArtiste -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNomArtiste">
+        <rdfs:label xml:lang="fr">nom artiste</rdfs:label>
+        <rdfs:comment xml:lang="fr">nom de l&apos;artiste</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNomGenre -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNomGenre">
+        <rdfs:label xml:lang="fr">nom genre</rdfs:label>
+        <rdfs:comment xml:lang="fr">nom du genre</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Genre"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNomGroupe -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNomGroupe">
+        <rdfs:label xml:lang="fr">nom groupe</rdfs:label>
+        <rdfs:comment xml:lang="fr">nom du groupe</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNomSousGenre -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNomSousGenre">
+        <rdfs:label xml:lang="fr">nom sous genre</rdfs:label>
+        <rdfs:comment xml:lang="fr">nom du sous-genre</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourNumeroChanson -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourNumeroChanson">
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourPrenom -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourPrenom">
+        <rdfs:label xml:lang="fr">prenom</rdfs:label>
+        <rdfs:comment xml:lang="fr">prénom de l&apos;artiste</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourTitre -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourTitre">
+        <rdfs:label xml:lang="fr">titre</rdfs:label>
+        <rdfs:comment xml:lang="fr">titre d&apos;une chanson</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Chanson"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourURL -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourURL">
+        <rdfs:label xml:lang="fr">url</rdfs:label>
+        <rdfs:comment xml:lang="fr">URL de la chanson</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Fichier"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#aPourVente -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-52;aPourVente">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="fr">vente</rdfs:label>
+        <rdfs:comment xml:lang="fr">nombre de vente d&apos;un album</rdfs:comment>
+        <rdfs:domain rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Album -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Album">
+        <rdfs:label xml:lang="fr">album</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-52;contient"/>
+                <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Artiste"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Chanson"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Fichier"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Genre"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:comment xml:lang="fr">Un album est un ensemble de divers titres d&apos;un artiste présentés sous forme de disque.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Artiste -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Artiste">
+        <rdfs:label xml:lang="fr">artiste</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estArtisteDe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estMembreDe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Groupe"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Chanson"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Fichier"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Genre"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:comment xml:lang="fr">Un artiste est une personne qui crée une œuvre, ici la musique. Un artiste peut être un auteur, un compositeur ou un interprète.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Auteur -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Auteur">
+        <rdfs:label xml:lang="fr">auteur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;cree"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:comment xml:lang="fr">Un auteur d&apos;une chanson est la personne qui crée les paroles de celle-ci.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Chanson -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Chanson">
+        <rdfs:label xml:lang="fr">chanson</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourArtiste"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Artiste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourGenre"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourGroupe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Groupe"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;appartient"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Album"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estComposePar"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Compositeur"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estCreePar"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Auteur"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estInterpretePar"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Interprète"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estRepresenteeDans"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Fichier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Fichier"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Genre"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:comment xml:lang="fr">Une chanson est une composition musicale contenant du texte et une mélodie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Compositeur -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Compositeur">
+        <rdfs:label xml:lang="fr">compositeur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;compose"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:comment xml:lang="fr">Un compositeur de musique est un musicien qui réalise de la musique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Disque_diamant -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Disque_diamant">
+        <rdfs:label xml:lang="fr">disque diamant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">500000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Album"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Disque_double_platine"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Disque_or"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Disque_platine"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Disque_triple_platine"/>
+        <rdfs:comment xml:lang="fr">Un disque diamant est un album dont entre 500000 exemplaires vendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Disque_double_platine -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Disque_double_platine">
+        <rdfs:label xml:lang="fr">disque double platine</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">300000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">200000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:comment xml:lang="fr">Un disque double platine est un album dont entre 200000 et 300000 exemplaires vendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Disque_or -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Disque_or">
+        <rdfs:label xml:lang="fr">disque d&apos;or</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">100000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:comment xml:lang="fr">Un disque d&apos;or est un album dont entre 50000 100000 exemplaires vendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Disque_platine -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Disque_platine">
+        <rdfs:label xml:lang="fr">disque platine</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">200000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">100000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:comment xml:lang="fr">Un disque platine est un album dont entre 100000 et 200000 exemplaires vendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Disque_triple_platine -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Disque_triple_platine">
+        <rdfs:label xml:lang="fr">disque triple platine</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Album"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourVente"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">500000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">300000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Album"/>
+        <rdfs:comment xml:lang="fr">Un disque triple platine est un album dont entre 300000 et 500000 exemplaires vendus.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Fichier -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Fichier">
+        <rdfs:label xml:lang="fr">fichier</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&untitled-ontology-52;joue"/>
+                <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Genre"/>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:comment xml:lang="fr">Un fichier contient l&apos;url pour stocker la chanson.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Genre -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Genre">
+        <rdfs:label xml:lang="fr">genre</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourSousGenre"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estGenreDe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&untitled-ontology-52;Groupe"/>
+        <rdfs:comment xml:lang="fr">Le genre musical caractérise le tylpe/style de la musique. Il existe un grand nombre de genres différents.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Groupe -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Groupe">
+        <rdfs:label xml:lang="fr">groupe</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estGroupeDe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;aPourMembre"/>
+                        <owl:onClass rdf:resource="&untitled-ontology-52;Artiste"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="fr">Un groupe est un ensemble d&apos;artistes, dans notre cas des artistes de musique.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Interprète -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Interprète">
+        <rdfs:label xml:lang="fr">interprete</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Artiste"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;interprete"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Chanson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Artiste"/>
+        <rdfs:comment xml:lang="fr">Un interprète est un musicien qui réalise les idées d&apos;un compositeur.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Sous-Genre -->
+
+    <owl:Class rdf:about="&untitled-ontology-52;Sous-Genre">
+        <rdfs:label xml:lang="fr">sous-genre</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&untitled-ontology-52;Genre"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&untitled-ontology-52;estSousGenreDe"/>
+                        <owl:someValuesFrom rdf:resource="&untitled-ontology-52;Genre"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-52;Genre"/>
+        <rdfs:comment xml:lang="fr">Un sous-genre est une sous-catégorie de genre. Il définit plus précisement le genre.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#25 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;25">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_diamant"/>
+        <untitled-ontology-52:aPourNumeroChanson rdf:datatype="&xsd;integer">1</untitled-ontology-52:aPourNumeroChanson>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">1000000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:aPourAnneeApparitionAlbum rdf:datatype="&xsd;integer">2015</untitled-ontology-52:aPourAnneeApparitionAlbum>
+        <untitled-ontology-52:aPourNomAlbum>adele_25</untitled-ontology-52:aPourNomAlbum>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Hello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Adele -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Adele">
+        <rdf:type rdf:resource="&untitled-ontology-52;Auteur"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Compositeur"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Interprète"/>
+        <untitled-ontology-52:aPourNationalite>anglaise</untitled-ontology-52:aPourNationalite>
+        <untitled-ontology-52:aPourNomArtiste>Adele</untitled-ontology-52:aPourNomArtiste>
+        <untitled-ontology-52:aPourDateDeNaissance>5 mai 1988</untitled-ontology-52:aPourDateDeNaissance>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Hello"/>
+        <untitled-ontology-52:cree rdf:resource="&untitled-ontology-52;Hello"/>
+        <untitled-ontology-52:interprete rdf:resource="&untitled-ontology-52;Hello"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Hello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Aerosmith -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Aerosmith">
+        <rdf:type rdf:resource="&untitled-ontology-52;Groupe"/>
+        <untitled-ontology-52:estGroupeDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estGroupeDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:estGroupeDe rdf:resource="&untitled-ontology-52;Jaded"/>
+        <untitled-ontology-52:aPourMembre rdf:resource="&untitled-ontology-52;Joe_Perry"/>
+        <untitled-ontology-52:aPourMembre rdf:resource="&untitled-ontology-52;Joey_Kramer"/>
+        <untitled-ontology-52:aPourMembre rdf:resource="&untitled-ontology-52;Steven_Tyler"/>
+        <untitled-ontology-52:aPourMembre rdf:resource="&untitled-ontology-52;Tom_Hamilton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Angel -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Angel">
+        <rdf:type rdf:resource="&untitled-ontology-52;Chanson"/>
+        <untitled-ontology-52:aPourGroupe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:estCreePar rdf:resource="&untitled-ontology-52;Joe_Perry"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Joe_Perry"/>
+        <untitled-ontology-52:estComposePar rdf:resource="&untitled-ontology-52;Joey_Kramer"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Joey_Kramer"/>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;Nine_Lives"/>
+        <untitled-ontology-52:aPourGenre rdf:resource="&untitled-ontology-52;Rock"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Steven_Tyler"/>
+        <untitled-ontology-52:estInterpretePar rdf:resource="&untitled-ontology-52;Steven_Tyler"/>
+        <untitled-ontology-52:estComposePar rdf:resource="&untitled-ontology-52;Tom_Hamilton"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Tom_Hamilton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Classique -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Classique">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Country -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Country">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Cryin&apos; -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Cryin&apos;">
+        <rdf:type rdf:resource="&untitled-ontology-52;Chanson"/>
+        <untitled-ontology-52:aPourGroupe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;Music_from_Another_Dimension!"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Get_a_Grip -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Get_a_Grip">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_or"/>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">55000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Hard_Rock -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Hard_Rock">
+        <rdf:type rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+        <untitled-ontology-52:estSousGenreDe rdf:resource="&untitled-ontology-52;Rock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Hello -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Hello">
+        <rdf:type rdf:resource="&untitled-ontology-52;Chanson"/>
+        <untitled-ontology-52:aPourAnneeApparitionChanson rdf:datatype="&xsd;integer">2015</untitled-ontology-52:aPourAnneeApparitionChanson>
+        <untitled-ontology-52:aPourDuree rdf:datatype="&xsd;integer">5</untitled-ontology-52:aPourDuree>
+        <untitled-ontology-52:aPourTitre>Hello</untitled-ontology-52:aPourTitre>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;25"/>
+        <untitled-ontology-52:estInterpretePar rdf:resource="&untitled-ontology-52;Adele"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Adele"/>
+        <untitled-ontology-52:estComposePar rdf:resource="&untitled-ontology-52;Adele"/>
+        <untitled-ontology-52:estCreePar rdf:resource="&untitled-ontology-52;Adele"/>
+        <untitled-ontology-52:aPourGenre rdf:resource="&untitled-ontology-52;Pop"/>
+        <untitled-ontology-52:estRepresenteeDans rdf:resource="&untitled-ontology-52;fichier_Hello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Jaded -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Jaded">
+        <rdf:type rdf:resource="&untitled-ontology-52;Chanson"/>
+        <untitled-ontology-52:aPourGroupe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;Get_a_Grip"/>
+        <untitled-ontology-52:estCreePar rdf:resource="&untitled-ontology-52;Joe_Perry"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Joe_Perry"/>
+        <untitled-ontology-52:estComposePar rdf:resource="&untitled-ontology-52;Joey_Kramer"/>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;Pump"/>
+        <untitled-ontology-52:aPourGenre rdf:resource="&untitled-ontology-52;Rock"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Steven_Tyler"/>
+        <untitled-ontology-52:estInterpretePar rdf:resource="&untitled-ontology-52;Steven_Tyler"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Tom_Hamilton"/>
+        <untitled-ontology-52:estComposePar rdf:resource="&untitled-ontology-52;Tom_Hamilton"/>
+        <untitled-ontology-52:estRepresenteeDans rdf:resource="&untitled-ontology-52;fichier_jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Joe_Perry -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Joe_Perry">
+        <rdf:type rdf:resource="&untitled-ontology-52;Auteur"/>
+        <untitled-ontology-52:estMembreDe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:cree rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:cree rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Jaded"/>
+        <untitled-ontology-52:cree rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Joey_Kramer -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Joey_Kramer">
+        <rdf:type rdf:resource="&untitled-ontology-52;Compositeur"/>
+        <untitled-ontology-52:estMembreDe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Jaded"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Metal -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Metal">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Metal_electronique -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Metal_electronique">
+        <rdf:type rdf:resource="&untitled-ontology-52;Sous-Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Music_from_Another_Dimension! -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Music_from_Another_Dimension!">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_platine"/>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">150000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Nine_Lives -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Nine_Lives">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_triple_platine"/>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">450000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Angel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Pop -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Pop">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+        <untitled-ontology-52:aPourNomGenre>Pop</untitled-ontology-52:aPourNomGenre>
+        <untitled-ontology-52:estGenreDe rdf:resource="&untitled-ontology-52;Hello"/>
+        <untitled-ontology-52:estGenreDe rdf:resource="&untitled-ontology-52;Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Pump -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Pump">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_double_platine"/>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">250000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Rap -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Rap">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Rock -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Rock">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+        <untitled-ontology-52:estGenreDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estGenreDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:aPourSousGenre rdf:resource="&untitled-ontology-52;Hard_Rock"/>
+        <untitled-ontology-52:estGenreDe rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Sale_el_sol -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Sale_el_sol">
+        <rdf:type rdf:resource="&untitled-ontology-52;Album"/>
+        <rdf:type rdf:resource="&untitled-ontology-52;Disque_diamant"/>
+        <untitled-ontology-52:aPourVente rdf:datatype="&xsd;integer">100000000</untitled-ontology-52:aPourVente>
+        <untitled-ontology-52:contient rdf:resource="&untitled-ontology-52;Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Shakira -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Shakira">
+        <rdf:type rdf:resource="&untitled-ontology-52;Interprète"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Waka_waka"/>
+        <untitled-ontology-52:interprete rdf:resource="&untitled-ontology-52;Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Steven_Tyler -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Steven_Tyler">
+        <rdf:type rdf:resource="&untitled-ontology-52;Interprète"/>
+        <untitled-ontology-52:estMembreDe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:interprete rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:interprete rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:interprete rdf:resource="&untitled-ontology-52;Jaded"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Tom_Hamilton -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Tom_Hamilton">
+        <rdf:type rdf:resource="&untitled-ontology-52;Compositeur"/>
+        <untitled-ontology-52:estMembreDe rdf:resource="&untitled-ontology-52;Aerosmith"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Angel"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Cryin&apos;"/>
+        <untitled-ontology-52:compose rdf:resource="&untitled-ontology-52;Jaded"/>
+        <untitled-ontology-52:estArtisteDe rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Trance -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Trance">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#Waka_waka -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;Waka_waka">
+        <rdf:type rdf:resource="&untitled-ontology-52;Chanson"/>
+        <untitled-ontology-52:aPourGenre rdf:resource="&untitled-ontology-52;Pop"/>
+        <untitled-ontology-52:appartient rdf:resource="&untitled-ontology-52;Sale_el_sol"/>
+        <untitled-ontology-52:estInterpretePar rdf:resource="&untitled-ontology-52;Shakira"/>
+        <untitled-ontology-52:aPourArtiste rdf:resource="&untitled-ontology-52;Shakira"/>
+        <untitled-ontology-52:estRepresenteeDans rdf:resource="&untitled-ontology-52;fichier_waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#chanson_francaise -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;chanson_francaise">
+        <rdf:type rdf:resource="&untitled-ontology-52;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#fichier_Hello -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;fichier_Hello">
+        <rdf:type rdf:resource="&untitled-ontology-52;Fichier"/>
+        <untitled-ontology-52:aPourURL>www.adele.com</untitled-ontology-52:aPourURL>
+        <untitled-ontology-52:joue rdf:resource="&untitled-ontology-52;Hello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#fichier_jaded -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;fichier_jaded">
+        <rdf:type rdf:resource="&untitled-ontology-52;Fichier"/>
+        <untitled-ontology-52:joue rdf:resource="&untitled-ontology-52;Jaded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/AIsZAI/ontologies/2016/10/untitled-ontology-5#fichier_waka_waka -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-52;fichier_waka_waka">
+        <rdf:type rdf:resource="&untitled-ontology-52;Fichier"/>
+        <untitled-ontology-52:joue rdf:resource="&untitled-ontology-52;Waka_waka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&owl;priorVersion">
+        <untitled-ontology-52:description></untitled-ontology-52:description>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
